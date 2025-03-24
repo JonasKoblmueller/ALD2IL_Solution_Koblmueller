@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArrayList\ArrayList.csproj">
+      <Project>{ec5ac5dc-fe5c-4f90-bb31-5a25aa3f911e}</Project>
+      <Name>ArrayList</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SingelLinkedList\SingelLinkedList.csproj">
+      <Project>{594cda85-3fbb-422b-b340-0d67b40b1047}</Project>
+      <Name>SingelLinkedList</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

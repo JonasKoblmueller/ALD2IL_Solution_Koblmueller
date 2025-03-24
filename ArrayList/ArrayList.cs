@@ -94,6 +94,27 @@ namespace ArrayList
             return true;
         }
 
+        //Zugriff mit Index auf ein Element
+        public T this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= count)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                }
+                return myarry[index];
+            }
+            set
+            {
+                if (index < 0 || index >= count)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                }
+                myarry[index] = value;
+            }
+        }
+
         public void Clear()
         {
             myarry = new T[myarry.Length];

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rechtschreibpruefung", "Rec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "ArrayList\ArrayList.csproj", "{EC5AC5DC-FE5C-4F90-BB31-5A25AA3F911E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vergleich_SLL_und_ArrayList", "Vergleich_SLL_und_ArrayList\Vergleich_SLL_und_ArrayList.csproj", "{B19E0F12-B469-4A26-974D-CEF86B8E6C3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EC5AC5DC-FE5C-4F90-BB31-5A25AA3F911E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC5AC5DC-FE5C-4F90-BB31-5A25AA3F911E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC5AC5DC-FE5C-4F90-BB31-5A25AA3F911E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19E0F12-B469-4A26-974D-CEF86B8E6C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19E0F12-B469-4A26-974D-CEF86B8E6C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19E0F12-B469-4A26-974D-CEF86B8E6C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19E0F12-B469-4A26-974D-CEF86B8E6C3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

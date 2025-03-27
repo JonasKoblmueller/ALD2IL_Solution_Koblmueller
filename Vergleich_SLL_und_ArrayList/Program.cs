@@ -46,30 +46,30 @@ namespace Vergleich_SLL_und_ArrayList
 
             stopwatch.Reset();
 
-            ////Suchen der Elemente
-            //stopwatch.Start();
-            //foreach (var word in words)
-            //{
-            //    sll.Contains(word);
-            //}
-            //stopwatch.Stop();
-            //Console.WriteLine($"SinglyLinkedList - Zeit zum suchen (Contains): {stopwatch.ElapsedMilliseconds} ms");
+            //Suchen der Elemente
+            stopwatch.Start();
+            foreach (var word in words)
+            {
+                sll.Contains(word);
+            }
+            stopwatch.Stop();
+            Console.WriteLine($"SinglyLinkedList - Zeit zum suchen (Contains): {stopwatch.ElapsedMilliseconds} ms");
 
-            //stopwatch.Reset();
+            stopwatch.Reset();
 
-            ////Aufrufen jedes Elements per Index
-            //stopwatch.Start();
-            //for (int i = 0; i < arrayList.Count(); i++)
-            //{
-            //    var element = arrayList[i];
-            //}
-            //stopwatch.Stop();
-            //Console.WriteLine($"ArrayList - Zeit zum suchen (wird hier mit Index gemacht): {stopwatch.ElapsedMilliseconds} ms");
+            //Aufrufen jedes Elements per Index
+            stopwatch.Start();
+            for (int i = 0; i < arrayList.Count(); i++)
+            {
+                var element = arrayList[i];
+            }
+            stopwatch.Stop();
+            Console.WriteLine($"ArrayList - Zeit zum suchen (wird hier mit Index gemacht): {stopwatch.ElapsedMilliseconds} ms");
 
-            //stopwatch.Stop();
-            //Console.WriteLine($"ArrayList - Zeit zum suchen (wird hier mit Index gemacht): {stopwatch.ElapsedMilliseconds} ms");
+            stopwatch.Stop();
+            Console.WriteLine($"ArrayList - Zeit zum suchen (wird hier mit Index gemacht): {stopwatch.ElapsedMilliseconds} ms");
 
-            //stopwatch.Reset();
+            stopwatch.Reset();
 
             // Entfenen von jeden Element
             stopwatch.Start();

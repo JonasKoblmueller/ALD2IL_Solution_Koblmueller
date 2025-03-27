@@ -11,7 +11,7 @@ namespace SingelLinkedList
     public class SinglyLinkedList<T> //Geneerict, Datentypen generisch verwenden
     {
         //Konstruktor
-        public SinglyLinkedList()
+        public SinglyLinkedList(K key)
             {
                 head = null;
                 tail = null;

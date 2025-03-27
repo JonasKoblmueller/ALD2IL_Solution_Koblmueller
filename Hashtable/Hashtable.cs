@@ -12,13 +12,18 @@ namespace Hashtable
 
         public Hashtable(int size)
         {
-            m_container = new ArrayList.ArrayList<SingelLinkedList.SinglyLinkedList<Tuple<K, V>>>(size);
+            m_container = new ArrayList.ArrayList<SingelLinkedList.SinglyLinkedList<Tuple<K, V>>>(size = 100);
+
+            for (int i = 0; i < size; i++)
+            {
+
+            }
         }
         public void put(K key, V value)
         {
             key.GetHashCode();
+            int index = key.GetHashCode() % m_container.Count();
 
-            throw new NotImplementedException();
         }
 
         public V get(K key)

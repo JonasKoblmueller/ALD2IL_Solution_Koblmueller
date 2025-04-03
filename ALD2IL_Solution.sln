@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vergleich_SLL_und_ArrayList
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashtable", "Hashtable\Hashtable.csproj", "{03B4767D-55D1-4EA6-B3B5-2562F3616A5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Hashtable", "Test_Hashtable\Test_Hashtable.csproj", "{A295567B-974A-4FB1-B0F7-D19C5F3C352D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{03B4767D-55D1-4EA6-B3B5-2562F3616A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03B4767D-55D1-4EA6-B3B5-2562F3616A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03B4767D-55D1-4EA6-B3B5-2562F3616A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A295567B-974A-4FB1-B0F7-D19C5F3C352D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A295567B-974A-4FB1-B0F7-D19C5F3C352D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A295567B-974A-4FB1-B0F7-D19C5F3C352D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A295567B-974A-4FB1-B0F7-D19C5F3C352D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,7 @@ namespace SingelLinkedList
     public class SinglyLinkedList<T> //Geneerict, Datentypen generisch verwenden
     {
         //Konstruktor
-        public SinglyLinkedList(K key)
+        public SinglyLinkedList()
             {
                 head = null;
                 tail = null;
@@ -136,7 +136,7 @@ namespace SingelLinkedList
         }
 
         //Mit dieser Moethode kann ein Element mittels Indey aufgerufen werden. 
-        public T FindByIndex(uint index)
+        public T FindByIndex(int index)
         {
             if (index < 0 || index >= count)
             {

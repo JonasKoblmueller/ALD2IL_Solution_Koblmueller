@@ -126,6 +126,10 @@ namespace ArrayList
             return count;
         }
 
+        public int Length()
+        {
+            return myarry.Length;
+        }
 
 
 

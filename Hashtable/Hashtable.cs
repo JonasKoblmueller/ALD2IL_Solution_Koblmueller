@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Hashtable
 {
-    class Hashtable<K, V>
+    public class Hashtable<K, V>
     {
         private ArrayList.ArrayList<SingelLinkedList.SinglyLinkedList<Tuple<K,V>>>m_container;
-        int count = 0;
+        private int count = 0;
 
         public Hashtable(int size)
         {
@@ -17,8 +17,11 @@ namespace Hashtable
 
             for (int i = 0; i < size; i++)
             {
-
+                //Für jeden Index soll eine Leere SinglyLinkedList mit einen Tuple erstellt werden
+                m_container.Add(new SingelLinkedList.SinglyLinkedList<Tuple<K, V>>());
             }
+
+
         }
         public void put(K key, V value)
         {

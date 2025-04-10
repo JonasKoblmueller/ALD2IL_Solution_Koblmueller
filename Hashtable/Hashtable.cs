@@ -26,7 +26,7 @@ namespace Hashtable
         public void put(K key, V value)
         {
             key.GetHashCode();
-            int index = key.GetHashCode() % m_container.Count();
+            int index = Math.Abs(key.GetHashCode() % m_container.Count());
 
             //hinzufügen des Wertes value mit dem Schlüssel key
             if (m_container[index] == null)
@@ -58,7 +58,7 @@ namespace Hashtable
 
         public bool get(K key, out V value)
         {
-            int index = key.GetHashCode() % m_container.Count();
+            int index = Math.Abs(key.GetHashCode() % m_container.Count());
 
             for (int i = 0; i < m_container[index].Count(); i++)
             {
@@ -74,7 +74,7 @@ namespace Hashtable
 
         public bool Remove(K key)
         {
-            int index = key.GetHashCode() % m_container.Count();
+            int index = Math.Abs(key.GetHashCode() % m_container.Count());
 
             for (int i = 0; i < m_container[index].Count(); i++)
             {
@@ -89,7 +89,7 @@ namespace Hashtable
 
         public bool ContainsKey(K key)
         {
-            int index = key.GetHashCode() % m_container.Count();
+            int index = Math.Abs(key.GetHashCode() % m_container.Count());
 
             for (int i = 0; i < m_container[index].Count(); i++)
             {
@@ -112,10 +112,10 @@ namespace Hashtable
             var oldContainer = m_container;
             m_container = new ArrayList.ArrayList<SingelLinkedList.SinglyLinkedList<Tuple<K, V>>>(newSize);
 
-            // Neue Buckets initialisieren
             for (int i = 0; i < newSize; i++)
             {
-                m_container[i] = new SingelLinkedList.SinglyLinkedList<Tuple<K, V>>();
+                //Für jeden Index soll eine Leere SinglyLinkedList mit einen Tuple erstellt werden
+                m_container.Add(new SingelLinkedList.SinglyLinkedList<Tuple<K, V>>());
             }
 
             // Alle alten Werte neu einfügen
@@ -127,7 +127,33 @@ namespace Hashtable
                     for (int j = 0; j < oldContainer[i].Count(); j++)
                     {
                         var item = oldContainer[i].FindByIndex(j);
-                        put(item.Item1, item.Item2);
+                        K key = item.Item1;
+                        V value = item.Item2;
+
+                        key.GetHashCode();
+                        int index = Math.Abs(key.GetHashCode() % m_container.Count());
+
+                        //hinzufügen des Wertes value mit dem Schlüssel key
+                        if (m_container[index] == null)
+                        {
+                            m_container[index] = new SingelLinkedList.SinglyLinkedList<Tuple<K, V>>();
+                        }
+
+                        //Überprüfen obe ein Element mit dem Schlüssel key bereits vorhanden ist
+                        for (int k = 0; k < m_container[index].Count(); k++)
+                        {
+                            if (m_container[index].FindByIndex(k).Item1.Equals(key))
+                            {
+                                //Wenn ja, dann den Wert value aktualisieren
+                                m_container[index].Remove(m_container[index].FindByIndex(k));
+                                m_container[index].Add(new Tuple<K, V>(key, value));
+                                return;
+                            }
+                        }
+                        m_container[index].Add(new Tuple<K, V>(key, value));
+                        count++;
+
+
                     }
                 }
             }

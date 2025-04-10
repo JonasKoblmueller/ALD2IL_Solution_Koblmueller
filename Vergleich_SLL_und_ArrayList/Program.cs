@@ -90,8 +90,6 @@ namespace Vergleich_SLL_und_ArrayList
             stopwatch.Stop();
             Console.WriteLine($"ArrayList - Zeit zum Entferen jedes einzelen Elemenst: {stopwatch.ElapsedMilliseconds} ms");
 
-
-
         }
     }
 }

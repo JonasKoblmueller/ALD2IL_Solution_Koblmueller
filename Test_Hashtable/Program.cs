@@ -7,6 +7,9 @@ using SingelLinkedList;
 using ArrayList;
 using Hashtable;
 using System.Collections;
+using System.Diagnostics;
+using System.IO;
+
 
 
 namespace Test_Hashtable
@@ -15,7 +18,7 @@ namespace Test_Hashtable
     {
         static void Main(string[] args)
         {
-            Hashtable<Person,int> hashtable = new Hashtable<Person, int>(10);
+            Hashtable<Person,int> hashtable = new Hashtable<Person, int>(100);
 
             hashtable.put(new Person("Max", "Mustermann", 25), 1);
             hashtable.put(new Person("Erika", "Musterfrau", 30), 2);
@@ -41,12 +44,64 @@ namespace Test_Hashtable
 
 
 
+            //Vergleich SingyLinkedList und ArrayList und Hashtable
+
+            string filePath = "C:\\Users\\jonas\\OneDrive - FH OOe\\FH_Master\\2_Semester\\Algorithmen_und_Datenstrukturen\\ALD2IL_Solution\\Rechtschreibpruefung\\german.dic";
+            string[] words = File.ReadAllLines(filePath);
+
+            SinglyLinkedList<string> sll = new SinglyLinkedList<string>();
+            ArrayList<string> arrayList = new ArrayList<string>(words.Length);
+            Hashtable<string, bool> hashtable1 = new Hashtable<string, bool>(10);
+
+            Stopwatch sw = new Stopwatch();
+
+            //Befüllen
+            sw.Restart();
+            foreach (var word in words)
+                sll.Add(word);
+            sw.Stop();
+            Console.WriteLine($"LinkedList Befüllen: {sw.ElapsedMilliseconds} ms");
+
+
+            sw.Restart();
+            foreach (var word in words)
+                arrayList.Add(word);
+            sw.Stop();
+            Console.WriteLine($"ArrayList Befüllen: {sw.ElapsedMilliseconds} ms");
+
+
+            sw.Start();
+            foreach (var word in words)
+                hashtable1.put(word, true);
+            sw.Stop();
+            Console.WriteLine($"Hashtable Befüllen: {sw.ElapsedMilliseconds} ms");
 
 
 
+            // Zufällige Wörter für die Suche
+            Random rnd = new Random();
+            var testWords = words.OrderBy(x => rnd.Next()).Take(100).ToArray();
 
 
+            sw.Restart();
+            foreach (var word in testWords)
+                hashtable1.ContainsKey(word);
+            sw.Stop();
+            Console.WriteLine($"Hashtable Suchen: {sw.ElapsedMilliseconds} ms");
 
+
+            sw.Restart();
+            foreach (var word in testWords)
+                sll.Contains(word);
+            sw.Stop();
+            Console.WriteLine($"LinkedList Suchen: {sw.ElapsedMilliseconds} ms");
+
+     
+            sw.Restart();
+            foreach (var word in testWords)
+                arrayList.Remove(word); 
+            sw.Stop();
+            Console.WriteLine($"ArrayList Suchen: {sw.ElapsedMilliseconds} ms");
 
         }
 

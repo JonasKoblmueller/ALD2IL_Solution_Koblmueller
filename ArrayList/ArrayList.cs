@@ -130,12 +130,5 @@ namespace ArrayList
         {
             return myarry.Length;
         }
-
-
-
-
-
-
-
     }
 }
